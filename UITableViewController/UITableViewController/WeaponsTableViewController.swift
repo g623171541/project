@@ -10,7 +10,10 @@ import UIKit
 
 class WeaponsTableViewController: UITableViewController {
 
-//带模糊效果的容器 Visual Effect View With Blur
+/*
+     带模糊效果的容器 Visual Effect View With Blur
+     扩展在storyboard中可设置的项：使用@IBInspectable，把扩展专门写一个文件“ UIViewHelper”
+ */
     
     //数据源
     var weapons = ["AUG","AWM","十字弩","DP28","Groza","Kar98k","M16a4","Micro UZI","平底锅","SKS","UMP9"]

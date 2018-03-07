@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A62A76C204FADC000751B27 /* UIViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A62A76B204FADC000751B27 /* UIViewHelper.swift */; };
 		0A72A621204E5C0200AAB2ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72A620204E5C0200AAB2ED /* AppDelegate.swift */; };
 		0A72A626204E5C0200AAB2ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A72A624204E5C0200AAB2ED /* Main.storyboard */; };
 		0A72A628204E5C0200AAB2ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A72A627204E5C0200AAB2ED /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A62A76B204FADC000751B27 /* UIViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewHelper.swift; sourceTree = "<group>"; };
 		0A72A61D204E5C0200AAB2ED /* UITableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A72A620204E5C0200AAB2ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A72A625204E5C0200AAB2ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				0A72A620204E5C0200AAB2ED /* AppDelegate.swift */,
 				0A72A632204E5CE900AAB2ED /* WeaponsTableViewController.swift */,
 				E8A66566204F774300B059E8 /* CardCell.swift */,
+				0A62A76B204FADC000751B27 /* UIViewHelper.swift */,
 				0A72A624204E5C0200AAB2ED /* Main.storyboard */,
 				0A72A627204E5C0200AAB2ED /* Assets.xcassets */,
 				0A72A629204E5C0200AAB2ED /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			files = (
 				0A72A633204E5CE900AAB2ED /* WeaponsTableViewController.swift in Sources */,
 				0A72A621204E5C0200AAB2ED /* AppDelegate.swift in Sources */,
+				0A62A76C204FADC000751B27 /* UIViewHelper.swift in Sources */,
 				E8A66567204F774300B059E8 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
