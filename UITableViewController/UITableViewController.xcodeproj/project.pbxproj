@@ -12,6 +12,7 @@
 		0A72A628204E5C0200AAB2ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A72A627204E5C0200AAB2ED /* Assets.xcassets */; };
 		0A72A62B204E5C0200AAB2ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A72A629204E5C0200AAB2ED /* LaunchScreen.storyboard */; };
 		0A72A633204E5CE900AAB2ED /* WeaponsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72A632204E5CE900AAB2ED /* WeaponsTableViewController.swift */; };
+		E8A66567204F774300B059E8 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A66566204F774300B059E8 /* CardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0A72A62A204E5C0200AAB2ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A72A62C204E5C0200AAB2ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A72A632204E5CE900AAB2ED /* WeaponsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponsTableViewController.swift; sourceTree = "<group>"; };
+		E8A66566204F774300B059E8 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				0A72A620204E5C0200AAB2ED /* AppDelegate.swift */,
 				0A72A632204E5CE900AAB2ED /* WeaponsTableViewController.swift */,
+				E8A66566204F774300B059E8 /* CardCell.swift */,
 				0A72A624204E5C0200AAB2ED /* Main.storyboard */,
 				0A72A627204E5C0200AAB2ED /* Assets.xcassets */,
 				0A72A629204E5C0200AAB2ED /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			files = (
 				0A72A633204E5CE900AAB2ED /* WeaponsTableViewController.swift in Sources */,
 				0A72A621204E5C0200AAB2ED /* AppDelegate.swift in Sources */,
+				E8A66567204F774300B059E8 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ class WeaponsTableViewController: UITableViewController {
     var weapons = ["AUG","AWM","十字弩","DP28","Groza","Kar98k","M16a4","Micro UZI","平底锅","SKS","UMP9"]
     var weaponTypes = ["自动步枪","狙击枪","冷兵器","机枪","自动步枪","狙击枪","自动步枪","冲锋枪","近身武器","半自动步枪","冲锋枪"]
     var origins = ["奥地利","英国","中国","前苏联","俄罗斯","德国","美国","以色列","美国","前苏联","美国"]
-    var weapomImages = ["aug","awm","crossbow","dp28","groza","kar98k","m16a4","microuzi","pan","ska","ump9"]
+    var weapomImages = ["aug","awm","crossbow","dp28","groza","kar98k","m16a4","microuzi","pan","sks","ump9"]
     
     
     override func viewDidLoad() {
@@ -28,33 +28,32 @@ class WeaponsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return weapons.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell", for: indexPath)
+        
+        //利用这种写法的Id不容易出错，上面的方法也可
+        let id = String(describing:CardCell.self)
+        // as! CardCell 必须把它强制转换成 CardCell，要不读不到其属性
+        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath) as! CardCell
+        
+        cell.typeLabel.text = weaponTypes[indexPath.row]
+        cell.weaponLabel.text = weapons[indexPath.row]
+        cell.originLabel.text = origins[indexPath.row]
+        cell.backImageView.image = UIImage(named: weapomImages[indexPath.row])
+        
         // Configure the cell...
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
