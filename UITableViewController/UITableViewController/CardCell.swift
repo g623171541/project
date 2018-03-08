@@ -16,6 +16,21 @@ class CardCell: UITableViewCell {
     @IBOutlet weak var originLabel: UILabel!
     @IBOutlet weak var backImageView: UIImageView!
     
+    //Model：单个武器的收藏状态
+    var favorite = false {          //在其后面加个大括号，调用观察者模式
+        willSet {                   //即将发生变化，包含一个新值 newValue
+            if newValue {
+                favBtn.setImage(#imageLiteral(resourceName: "fav"), for: .normal)
+            }else{
+                favBtn.setImage(#imageLiteral(resourceName: "unfav"), for: .normal)
+            }
+        }
+    }
+    
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

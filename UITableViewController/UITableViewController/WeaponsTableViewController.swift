@@ -21,6 +21,27 @@ class WeaponsTableViewController: UITableViewController {
     var origins = ["奥地利","英国","中国","前苏联","俄罗斯","德国","美国","以色列","美国","前苏联","美国"]
     var weapomImages = ["aug","awm","crossbow","dp28","groza","kar98k","m16a4","microuzi","pan","sks","ump9"]
     
+    //Model：保存武器的收藏状态
+    var favorites = Array(repeating: false, count: 11)
+    
+    //收藏按钮的点击事件
+    @IBAction func favBtnTap(_ sender: UIButton) {
+        //找到button按钮在tableView中的位置
+        let btnPos = sender.convert(CGPoint.zero, to: self.tableView)
+        print("爱心按钮在tableView中的的位置：",btnPos)
+        
+        let indexPath = tableView.indexPathForRow(at: btnPos)!
+        print("爱心按钮所在行：",indexPath) 
+        
+        //self.favorites[(indexPath?.row)!] indexPath一定有值，所以上面的indexPath可以用感叹号强制拆包
+        self.favorites[indexPath.row] = !self.favorites[indexPath.row]
+        
+        //获取当前的单元格，强转成CardCell
+        let cell = tableView.cellForRow(at: indexPath) as! CardCell
+        //更新单元格的收藏状态
+        cell.favorite = favorites[indexPath.row]
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
