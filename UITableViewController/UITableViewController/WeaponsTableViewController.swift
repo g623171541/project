@@ -13,6 +13,8 @@ class WeaponsTableViewController: UITableViewController {
 /*
      带模糊效果的容器 Visual Effect View With Blur
      扩展在storyboard中可设置的项：使用@IBInspectable，把扩展专门写一个文件“ UIViewHelper”
+     
+     可以打断点让其停在某一行，在控制台写 po weapons 可以查看weapons这个对象
  */
     
     //数据源
@@ -86,17 +88,83 @@ class WeaponsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
+    
+    //DataSource方法：对单元格的操作
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        
+        weapomImages.remove(at: indexPath.row)
+        weaponTypes.remove(at: indexPath.row)
+        favorites.remove(at: indexPath.row)
+        origins.remove(at: indexPath.row)
+        weapons.remove(at: indexPath.row)
+        
+        print("count",weapons.count)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+  
     }
-    */
+    
+    //向左滑删除分享操作，重写了这个方法上面的方法就失效
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //删除操作
+        let delAction = UIContextualAction(style: .destructive, title: "delete") { (_, _, completion) in
+            self.weapomImages.remove(at: indexPath.row)
+            self.weaponTypes.remove(at: indexPath.row)
+            self.favorites.remove(at: indexPath.row)
+            self.origins.remove(at: indexPath.row)
+            self.weapons.remove(at: indexPath.row)
+            
+            print("count",self.weapons.count)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            completion(true)
+        }
+        
+        //分享操作
+        let shareAction = UIContextualAction(style: .normal, title: "share") { (_, _, completion) in
+            let text = "这是一个武器\(self.weapons[indexPath.row])"
+            let img = UIImage(named: self.weapomImages[indexPath.row])!
+            
+            //尽量使用系统中的分享工具，不适用第三方分享
+            let ac = UIActivityViewController(activityItems: [text,img], applicationActivities: nil)
+            
+            
+            //-------在iPad上模态弹出分享框不好看，就修改一下分享样式
+            if let pc = ac.popoverPresentationController{
+                if let cell = tableView.cellForRow(at: indexPath){
+                    pc.sourceView = cell
+                    pc.sourceRect = cell.bounds
+                }
+            }
+            
+            
+            //这个操作类似于action弹框
+            self.present(ac, animated: true, completion: nil)
+            //分享完成后要把 ”share“按钮收起来
+            completion(true)
+        }
+        shareAction.backgroundColor = UIColor.orange
+        
+        let config = UISwipeActionsConfiguration(actions: [delAction,shareAction])
+        return config
+    }
+    
+    //向右滑喜欢菜单
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favAction = UIContextualAction(style: .normal, title: "like") { (_, _, completion) in
+            self.favorites[indexPath.row] = !self.favorites[indexPath.row]
+            
+            completion(true)
+        }
+        
+        favAction.backgroundColor = UIColor.purple
+        favAction.image = self.favorites[indexPath.row] == true ? #imageLiteral(resourceName: "fav") : #imageLiteral(resourceName: "unfav")
+        
+        let config = UISwipeActionsConfiguration(actions: [favAction])
+        return config
+        
+    }
+    
+    
 
     /*
     // Override to support rearranging the table view.
