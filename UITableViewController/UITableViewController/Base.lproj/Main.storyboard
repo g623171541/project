@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Be-5h-1TT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cgh-DB-NeU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,10 +7,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Weapons Table View Controller-->
+        <!--绝地求生武器库-->
         <scene sceneID="QFJ-Gq-EMH">
             <objects>
                 <tableViewController id="9Be-5h-1TT" customClass="WeaponsTableViewController" customModule="UITableViewController" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,6 +148,7 @@
                                     <outlet property="originLabel" destination="tBg-Fl-6fX" id="MUe-0M-zHo"/>
                                     <outlet property="typeLabel" destination="t1d-ji-qfi" id="4zO-Fo-0xF"/>
                                     <outlet property="weaponLabel" destination="dbq-Lf-MUb" id="Io9-7O-NcB"/>
+                                    <segue destination="uEe-Rc-DIx" kind="show" id="h4b-Xi-9w2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -155,10 +157,58 @@
                             <outlet property="delegate" destination="9Be-5h-1TT" id="eEB-hn-WuL"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="绝地求生武器库" id="wo5-os-dO0"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNf-lJ-W3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631" y="134"/>
+            <point key="canvasLocation" x="968.79999999999995" y="133.5832083958021"/>
+        </scene>
+        <!--Weapon Detail View Controller-->
+        <scene sceneID="pr5-hc-hhQ">
+            <objects>
+                <viewController id="uEe-Rc-DIx" customClass="WeaponDetailViewController" customModule="UITableViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5PE-Gy-Ema">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rc8-o4-2dB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="rc8-o4-2dB" secondAttribute="bottom" id="2YH-SA-0s6"/>
+                            <constraint firstAttribute="trailing" secondItem="rc8-o4-2dB" secondAttribute="trailing" id="EIo-Go-wQ7"/>
+                            <constraint firstItem="rc8-o4-2dB" firstAttribute="top" secondItem="5PE-Gy-Ema" secondAttribute="top" id="Nb0-l9-rjF"/>
+                            <constraint firstItem="rc8-o4-2dB" firstAttribute="leading" secondItem="5PE-Gy-Ema" secondAttribute="leading" id="P21-YF-QaL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rCm-fj-Tf2"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerImageView" destination="rc8-o4-2dB" id="hxm-e9-seF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2H4-rB-Bp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mZA-nE-vpJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cgh-DB-NeU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gIu-m4-jZL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Be-5h-1TT" kind="relationship" relationship="rootViewController" id="KYx-3r-GK2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDP-ad-7ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="134"/>
         </scene>
     </scenes>
     <resources>

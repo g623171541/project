@@ -14,7 +14,9 @@ class WeaponsTableViewController: UITableViewController {
      带模糊效果的容器 Visual Effect View With Blur
      扩展在storyboard中可设置的项：使用@IBInspectable，把扩展专门写一个文件“ UIViewHelper”
      
-     可以打断点让其停在某一行，在控制台写 po weapons 可以查看weapons这个对象
+     知识点：
+        1.可以打断点让其停在某一行，在控制台写 po weapons 可以查看weapons这个对象
+        2.嵌入导航条后，在tableView同级添加title，再勾选上Navigation Bar中的 Prefers Large Titles就可以变成大标题了
  */
     
     //数据源
@@ -48,11 +50,6 @@ class WeaponsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Table view data source
@@ -181,14 +178,26 @@ class WeaponsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //转场之前的准备工作
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        //找到是点击的第几行
+        let row = tableView.indexPathForSelectedRow?.row
+        
+        //从segue中取出目的场景，强转成WeaponDetailViewController
+        let destination = segue.destination as! WeaponDetailViewController
+        
+        destination.imageName = weapomImages[row!]
+        
+        
+        
     }
-    */
+    
 
 }
