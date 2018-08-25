@@ -13,6 +13,7 @@
 		0A1CAA1C21301429007722BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1CAA1B21301429007722BE /* Assets.xcassets */; };
 		0A1CAA1F21301429007722BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1CAA1D21301429007722BE /* LaunchScreen.storyboard */; };
 		0A1CAA2221301429007722BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CAA2121301429007722BE /* main.m */; };
+		5937BE4855108248AE102693 /* libPods-RegisterBeike.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E5B7391C16ECD1A99F19D1 /* libPods-RegisterBeike.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		0A1CAA1E21301429007722BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1CAA2021301429007722BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A1CAA2121301429007722BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		191DFDA1B7F484544982614B /* Pods-RegisterBeike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterBeike.release.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike.release.xcconfig"; sourceTree = "<group>"; };
+		6736A16025A9984EF06FFE74 /* Pods-RegisterBeike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterBeike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike.debug.xcconfig"; sourceTree = "<group>"; };
+		B2E5B7391C16ECD1A99F19D1 /* libPods-RegisterBeike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RegisterBeike.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5937BE4855108248AE102693 /* libPods-RegisterBeike.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				0A1CAA1121301427007722BE /* RegisterBeike */,
 				0A1CAA1021301427007722BE /* Products */,
+				D1A5FDE1746E6FF58BFC8C00 /* Pods */,
+				393E4453F0A57B25ADE56CD8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = RegisterBeike;
 			sourceTree = "<group>";
 		};
+		393E4453F0A57B25ADE56CD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5B7391C16ECD1A99F19D1 /* libPods-RegisterBeike.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1A5FDE1746E6FF58BFC8C00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6736A16025A9984EF06FFE74 /* Pods-RegisterBeike.debug.xcconfig */,
+				191DFDA1B7F484544982614B /* Pods-RegisterBeike.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A1CAA2521301429007722BE /* Build configuration list for PBXNativeTarget "RegisterBeike" */;
 			buildPhases = (
+				E57066EB9B78E8560AFEE64E /* [CP] Check Pods Manifest.lock */,
 				0A1CAA0B21301427007722BE /* Sources */,
 				0A1CAA0C21301427007722BE /* Frameworks */,
 				0A1CAA0D21301427007722BE /* Resources */,
@@ -135,6 +160,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E57066EB9B78E8560AFEE64E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RegisterBeike-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A1CAA0B21301427007722BE /* Sources */ = {
@@ -281,35 +327,39 @@
 		};
 		0A1CAA2621301429007722BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6736A16025A9984EF06FFE74 /* Pods-RegisterBeike.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YC668WZG78;
 				INFOPLIST_FILE = RegisterBeike/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.umeing.RegisterBeike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		0A1CAA2721301429007722BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 191DFDA1B7F484544982614B /* Pods-RegisterBeike.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YC668WZG78;
 				INFOPLIST_FILE = RegisterBeike/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.umeing.RegisterBeike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
