@@ -31,6 +31,7 @@
 		191DFDA1B7F484544982614B /* Pods-RegisterBeike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterBeike.release.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike.release.xcconfig"; sourceTree = "<group>"; };
 		6736A16025A9984EF06FFE74 /* Pods-RegisterBeike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterBeike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike.debug.xcconfig"; sourceTree = "<group>"; };
 		B2E5B7391C16ECD1A99F19D1 /* libPods-RegisterBeike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RegisterBeike.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E82793D92132DC32003AE942 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		E82E92DE21329345008C6708 /* AFCustomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCustomManager.h; sourceTree = "<group>"; };
 		E82E92DF21329345008C6708 /* AFCustomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCustomManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +75,7 @@
 				0A1CAA1621301427007722BE /* ViewController.m */,
 				E82E92DE21329345008C6708 /* AFCustomManager.h */,
 				E82E92DF21329345008C6708 /* AFCustomManager.m */,
+				E82793D92132DC32003AE942 /* Header.h */,
 				0A1CAA1821301427007722BE /* Main.storyboard */,
 				0A1CAA1B21301429007722BE /* Assets.xcassets */,
 				0A1CAA1D21301429007722BE /* LaunchScreen.storyboard */,

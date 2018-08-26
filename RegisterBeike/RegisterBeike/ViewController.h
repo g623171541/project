@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AFCustomManager.h"
 #import <UIView+Toast.h>
+#import "Header.h"
 
 #define Invite_Code @"92870373"
 #define PASSWORD @"abc123456"

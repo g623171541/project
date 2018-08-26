@@ -29,7 +29,7 @@
 // 获取手机号码
 - (IBAction)getMobile:(UIButton *)sender {
     NSLog(@"获取手机号码");
-    NSDictionary *reqDic = @{@"action":@"getmobile",@"token":@"00800842a82ac34ee6c3c1e62b4f1c389bbb199b",@"itemid":@"17789"};
+    NSDictionary *reqDic = @{@"action":@"getmobile",@"token":TOKEN,@"itemid":@"17789"};
     [AFCustomManager get:@"http://api.fxhyd.cn/UserInterface.aspx" reqDic:reqDic successBlock:^(id responseObject) {
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
@@ -92,7 +92,7 @@
         [self.view makeToast:@"请获取手机号码"];
         return;
     }
-    NSDictionary *reqDic = @{@"action":@"getsms",@"token":@"00800842a82ac34ee6c3c1e62b4f1c389bbb199b",@"itemid":@"17789",@"mobile":self.mobileLabel.text};
+    NSDictionary *reqDic = @{@"action":@"getsms",@"token":TOKEN,@"itemid":@"17789",@"mobile":self.mobileLabel.text};
     [AFCustomManager get:@"http://api.fxhyd.cn/UserInterface.aspx" reqDic:reqDic successBlock:^(id responseObject) {
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
@@ -158,7 +158,7 @@
         [self.view makeToast:@"请获取手机号码"];
         return;
     }
-    NSDictionary *reqDic = @{@"action":@"getsms",@"token":@"00800842a82ac34ee6c3c1e62b4f1c389bbb199b",@"itemid":@"17789",@"mobile":self.mobileLabel.text};
+    NSDictionary *reqDic = @{@"action":@"getsms",@"token":TOKEN,@"itemid":@"17789",@"mobile":self.mobileLabel.text};
     [AFCustomManager get:@"http://api.fxhyd.cn/UserInterface.aspx" reqDic:reqDic successBlock:^(id responseObject) {
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
@@ -224,7 +224,7 @@
         [self.view makeToast:@"请获取手机号码"];
         return;
     }
-    NSDictionary *reqDic = @{@"action":@"getsms",@"token":@"00800842a82ac34ee6c3c1e62b4f1c389bbb199b",@"itemid":@"17789",@"mobile":self.mobileLabel.text};
+    NSDictionary *reqDic = @{@"action":@"getsms",@"token":TOKEN,@"itemid":@"17789",@"mobile":self.mobileLabel.text};
     [AFCustomManager get:@"http://api.fxhyd.cn/UserInterface.aspx" reqDic:reqDic successBlock:^(id responseObject) {
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
@@ -301,7 +301,7 @@
 #pragma mark - 释放手机号码接口
 -(void)releaseMobile:(NSString *)mobile{
     NSLog(@"释放手机号码");
-    NSDictionary *reqDic = @{@"action":@"release",@"token":@"00800842a82ac34ee6c3c1e62b4f1c389bbb199b",@"itemid":@"17789",@"mobile":self.mobileLabel.text};
+    NSDictionary *reqDic = @{@"action":@"release",@"token":TOKEN,@"itemid":@"17789",@"mobile":self.mobileLabel.text};
     [AFCustomManager get:@"http://api.fxhyd.cn/UserInterface.aspx" reqDic:reqDic successBlock:^(id responseObject) {
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
@@ -313,7 +313,7 @@
 #pragma mark - 拉黑手机号码接口
 -(void)addignoreMobile:(NSString *)mobile{
     NSLog(@"拉黑手机号码");
-    NSDictionary *reqDic = @{@"action":@"addignore",@"token":@"00800842a82ac34ee6c3c1e62b4f1c389bbb199b",@"itemid":@"17789",@"mobile":self.mobileLabel.text};
+    NSDictionary *reqDic = @{@"action":@"addignore",@"token":TOKEN,@"itemid":@"17789",@"mobile":self.mobileLabel.text};
     [AFCustomManager get:@"http://api.fxhyd.cn/UserInterface.aspx" reqDic:reqDic successBlock:^(id responseObject) {
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
