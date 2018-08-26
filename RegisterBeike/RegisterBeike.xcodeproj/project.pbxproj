@@ -14,6 +14,7 @@
 		0A1CAA1F21301429007722BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1CAA1D21301429007722BE /* LaunchScreen.storyboard */; };
 		0A1CAA2221301429007722BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CAA2121301429007722BE /* main.m */; };
 		5937BE4855108248AE102693 /* libPods-RegisterBeike.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E5B7391C16ECD1A99F19D1 /* libPods-RegisterBeike.a */; };
+		E82E92E021329345008C6708 /* AFCustomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E82E92DF21329345008C6708 /* AFCustomManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		191DFDA1B7F484544982614B /* Pods-RegisterBeike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterBeike.release.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike.release.xcconfig"; sourceTree = "<group>"; };
 		6736A16025A9984EF06FFE74 /* Pods-RegisterBeike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegisterBeike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike.debug.xcconfig"; sourceTree = "<group>"; };
 		B2E5B7391C16ECD1A99F19D1 /* libPods-RegisterBeike.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RegisterBeike.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E82E92DE21329345008C6708 /* AFCustomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCustomManager.h; sourceTree = "<group>"; };
+		E82E92DF21329345008C6708 /* AFCustomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCustomManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				0A1CAA1321301427007722BE /* AppDelegate.m */,
 				0A1CAA1521301427007722BE /* ViewController.h */,
 				0A1CAA1621301427007722BE /* ViewController.m */,
+				E82E92DE21329345008C6708 /* AFCustomManager.h */,
+				E82E92DF21329345008C6708 /* AFCustomManager.m */,
 				0A1CAA1821301427007722BE /* Main.storyboard */,
 				0A1CAA1B21301429007722BE /* Assets.xcassets */,
 				0A1CAA1D21301429007722BE /* LaunchScreen.storyboard */,
@@ -188,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A1CAA1721301427007722BE /* ViewController.m in Sources */,
+				E82E92E021329345008C6708 /* AFCustomManager.m in Sources */,
 				0A1CAA2221301429007722BE /* main.m in Sources */,
 				0A1CAA1421301427007722BE /* AppDelegate.m in Sources */,
 			);
