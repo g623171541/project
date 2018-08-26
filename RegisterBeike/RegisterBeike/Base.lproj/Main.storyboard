@@ -83,6 +83,13 @@
                                     <action selector="sendLoginMsgCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kGX-zE-smQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="登录验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mp-1M-H8n">
+                                <rect key="frame" x="16" y="307" width="87" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5y-SX-alg">
                                 <rect key="frame" x="251" y="303" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -107,8 +114,8 @@
                                     <action selector="getMsgCodeForEditPwd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SGB-cS-EM2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="短信验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHc-pT-RwJ">
-                                <rect key="frame" x="21" y="449" width="87" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="修改密码验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHc-pT-RwJ">
+                                <rect key="frame" x="21" y="449" width="122" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -146,13 +153,54 @@
                                     <action selector="sendMsgCodeForEditPwd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AsL-Pl-lfr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="登录验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mp-1M-H8n">
-                                <rect key="frame" x="16" y="307" width="87" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGf-G1-M0r">
+                                <rect key="frame" x="175" y="57" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v5P-yA-hWc">
+                                <rect key="frame" x="175" y="102" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UqK-Eh-ABl">
+                                <rect key="frame" x="175" y="147" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1R1-nv-l5t">
+                                <rect key="frame" x="175" y="188" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBj-M4-hBX">
+                                <rect key="frame" x="175" y="226" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Umc-RM-Xuk">
+                                <rect key="frame" x="175" y="264" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cdq-Hn-65q">
+                                <rect key="frame" x="175" y="306" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UuI-n4-l74">
+                                <rect key="frame" x="175" y="354" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YMu-g8-stu">
+                                <rect key="frame" x="175" y="403" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uO9-kP-XnG">
+                                <rect key="frame" x="175" y="448" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o0f-mg-uqR">
+                                <rect key="frame" x="175" y="486" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oew-Dz-92v">
+                                <rect key="frame" x="175" y="524" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -161,6 +209,18 @@
                         <outlet property="codeImageView" destination="mnh-Jm-54Q" id="78B-SW-mlk"/>
                         <outlet property="editMsgCodeField" destination="IHc-pT-RwJ" id="Wsz-lr-PqP"/>
                         <outlet property="imageCodeField" destination="xem-NH-Qa4" id="pk2-hA-0hO"/>
+                        <outlet property="imageView1" destination="TGf-G1-M0r" id="Jpd-6r-4oX"/>
+                        <outlet property="imageView10" destination="uO9-kP-XnG" id="t4K-Ca-Pj5"/>
+                        <outlet property="imageView11" destination="o0f-mg-uqR" id="BvT-Uh-p7Q"/>
+                        <outlet property="imageView12" destination="Oew-Dz-92v" id="tq7-gJ-KBO"/>
+                        <outlet property="imageView2" destination="v5P-yA-hWc" id="BEN-lL-H6F"/>
+                        <outlet property="imageView3" destination="UqK-Eh-ABl" id="4a9-7o-Ncb"/>
+                        <outlet property="imageView4" destination="1R1-nv-l5t" id="vs1-ge-WdP"/>
+                        <outlet property="imageView5" destination="UBj-M4-hBX" id="RcL-at-ugu"/>
+                        <outlet property="imageView6" destination="Umc-RM-Xuk" id="y5i-qN-Kyf"/>
+                        <outlet property="imageView7" destination="Cdq-Hn-65q" id="DCc-jE-1sO"/>
+                        <outlet property="imageView8" destination="UuI-n4-l74" id="ViV-3D-kUO"/>
+                        <outlet property="imageView9" destination="YMu-g8-stu" id="Hn6-mZ-3Vd"/>
                         <outlet property="loginMsgCodeField" destination="6mp-1M-H8n" id="xwY-0s-Psg"/>
                         <outlet property="mobileLabel" destination="zQk-FU-S5p" id="3Wh-UA-nsy"/>
                         <outlet property="msgCodeLabel" destination="saC-dk-Mcc" id="HjU-D0-zt6"/>

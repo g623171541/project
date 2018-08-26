@@ -22,10 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-
 }
+
 // 获取手机号码
 - (IBAction)getMobile:(UIButton *)sender {
     NSLog(@"获取手机号码");
@@ -33,11 +31,21 @@
     [AFCustomManager get:@"http://api.fxhyd.cn/UserInterface.aspx" reqDic:reqDic successBlock:^(id responseObject) {
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
-        NSString *mobile = [dataStr substringFromIndex:8];
-        NSLog(@"%@",mobile);
-        self.mobileLabel.text = mobile;
+        if(dataStr.length > 10){
+            NSString *mobile = [dataStr substringFromIndex:8];
+            self.mobileLabel.text = mobile;
+            if(mobile.length == 11){
+                self.imageView1.image = [UIImage imageNamed:@"right"];
+            }else{
+                self.imageView1.image = [UIImage imageNamed:@"wrong"];
+            }
+        }else{
+            self.imageView1.image = [UIImage imageNamed:@"wrong"];
+        }
+        
     } failureBlock:^(id error) {
         [self.view makeToast:@"获取手机号码失败"];
+        self.imageView1.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -51,8 +59,10 @@
     NSDictionary *reqDic = @{@"mobile_phone_no":self.mobileLabel.text,@"_t":[self currentTimeStr]};
     [AFCustomManager get:@"https://m.ke.com/capi/invite/getPicVerifyCode" reqDic:reqDic successBlock:^(id responseObject) {
         self.codeImageView.image = [UIImage imageWithData:responseObject];
+        self.imageView2.image = [UIImage imageNamed:@"right"];
     } failureBlock:^(id error) {
         [self.view makeToast:@"获取图片验证码失败"];
+        self.imageView2.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -71,17 +81,19 @@
     NSDictionary *reqDic = @{@"mobile_phone_no":self.mobileLabel.text,@"pic_verify_code":code,@"invite_code":Invite_Code};
     
     [AFCustomManager post:@"https://m.ke.com/capi/invite/sendVerifyCodeForRegister" reqDic:reqDic successBlock:^(id responseObject) {
-        NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",dataStr);
         NSDictionary *jsonStr = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        if([jsonStr[@"error"] length] == 0){
+        NSLog(@"%@",jsonStr);
+        if([jsonStr[@"errno"] integerValue] == 0){
             [self.view makeToast:@"发送成功"];
+            self.imageView3.image = [UIImage imageNamed:@"right"];
         }else{
-            [self.view makeToast:dataStr];
+            [self.view makeToast:jsonStr[@"error"]];
+            self.imageView3.image = [UIImage imageNamed:@"wrong"];
         }
         
     } failureBlock:^(id error) {
         [self.view makeToast:@"发送短信验证码失败"];
+        self.imageView3.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -97,6 +109,7 @@
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
         if(dataStr.length == 4){
+            self.imageView4.image = [UIImage imageNamed:@"wrong"];
             if([dataStr isEqualToString:@"3001"]){
                 [self.view makeToast:@"尚未收到短信,请稍后..."];
             }else{
@@ -107,8 +120,10 @@
         NSString *msgCode = [dataStr substringWithRange:NSMakeRange(22, 4)];
         NSLog(@"%@",msgCode);
         self.msgCodeLabel.text = msgCode;
+        self.imageView4.image = [UIImage imageNamed:@"right"];
     } failureBlock:^(id error) {
         [self.view makeToast:@"获取短信验证码失败"];
+        self.imageView4.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -129,9 +144,16 @@
     [AFCustomManager post:@"https://m.ke.com/capi/invite/register" reqDic:reqDic successBlock:^(id responseObject) {
         NSDictionary *jsonStr = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"%@",jsonStr);
-        
+        if([jsonStr[@"errno"] integerValue] == 0){
+            [self.view makeToast:@"注册成功"];
+            self.imageView5.image = [UIImage imageNamed:@"right"];
+        }else{
+            [self.view makeToast:jsonStr[@"error"]];
+            self.imageView5.image = [UIImage imageNamed:@"wrong"];
+        }
     } failureBlock:^(id error) {
         [self.view makeToast:@"发送短信验证码失败"];
+        self.imageView5.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -146,8 +168,16 @@
     [AFCustomManager get:@"https://app.api.ke.com/user/account/sendVerifyCodeForQuickLogin" reqDic:reqDic successBlock:^(id responseObject) {
         NSDictionary *jsonStr = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"%@",jsonStr);
+        if([jsonStr[@"errno"] integerValue] == 0){
+            [self.view makeToast:@"发送成功"];
+            self.imageView6.image = [UIImage imageNamed:@"right"];
+        }else{
+            [self.view makeToast:jsonStr[@"error"]];
+            self.imageView6.image = [UIImage imageNamed:@"wrong"];
+        }
     } failureBlock:^(id error) {
         [self.view makeToast:@"发送登录验证码失败"];
+        self.imageView6.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -163,17 +193,21 @@
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
         if(dataStr.length == 4){
+            self.imageView7.image = [UIImage imageNamed:@"wrong"];
             if([dataStr isEqualToString:@"3001"]){
                 [self.view makeToast:@"尚未收到短信,请稍后..."];
             }else{
                 [self.view makeToast:dataStr];
             }
+            return;
         }
         NSString *msgCode = [dataStr substringWithRange:NSMakeRange(18, 4)];
         NSLog(@"%@",msgCode);
         self.loginMsgCodeField.text = msgCode;
+        self.imageView7.image = [UIImage imageNamed:@"right"];
     } failureBlock:^(id error) {
         [self.view makeToast:@"获取登录验证码失败"];
+        self.imageView7.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -194,9 +228,16 @@
     [AFCustomManager post:@"https://app.api.ke.com/user/account/quicklogin" reqDic:reqDic successBlock:^(id responseObject) {
         NSDictionary *jsonStr = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"%@",jsonStr);
-        
+        if([jsonStr[@"errno"] integerValue] == 0){
+            [self.view makeToast:@"登录成功"];
+            self.imageView8.image = [UIImage imageNamed:@"right"];
+        }else{
+            [self.view makeToast:jsonStr[@"error"]];
+            self.imageView8.image = [UIImage imageNamed:@"wrong"];
+        }
     } failureBlock:^(id error) {
         [self.view makeToast:@"验证码登录失败"];
+        self.imageView8.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -209,11 +250,18 @@
     }
     NSDictionary *reqDic = @{@"mobile_phone_no":self.mobileLabel.text,@"request_ts":[self currentTimeStr]};
     [AFCustomManager get:@"https://app.api.ke.com/user/account/sendVerifyCodeForChangePasswordV2" reqDic:reqDic successBlock:^(id responseObject) {
-        NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",dataStr);
-        
+        NSDictionary *jsonStr = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"%@",jsonStr);
+        if([jsonStr[@"errno"] integerValue] == 0){
+            [self.view makeToast:@"发送成功"];
+            self.imageView9.image = [UIImage imageNamed:@"right"];
+        }else{
+            [self.view makeToast:jsonStr[@"error"]];
+            self.imageView9.image = [UIImage imageNamed:@"wrong"];
+        }
     } failureBlock:^(id error) {
         [self.view makeToast:@"修改密码-发送验证码失败"];
+        self.imageView9.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -229,17 +277,21 @@
         NSString *dataStr = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSLog(@"%@",dataStr);
         if(dataStr.length == 4){
+            self.imageView10.image = [UIImage imageNamed:@"wrong"];
             if([dataStr isEqualToString:@"3001"]){
                 [self.view makeToast:@"尚未收到短信,请稍后..."];
             }else{
                 [self.view makeToast:dataStr];
             }
+            return;
         }
         NSString *msgCode = [dataStr substringWithRange:NSMakeRange(18, 4)];
         NSLog(@"%@",msgCode);
         self.editMsgCodeField.text = msgCode;
+        self.imageView10.image = [UIImage imageNamed:@"right"];
     } failureBlock:^(id error) {
         [self.view makeToast:@"修改密码-获取验证码失败"];
+        self.imageView10.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -260,13 +312,18 @@
     [AFCustomManager post:@"https://app.api.ke.com/user/account/changePasswordByVerifyCodeV2" reqDic:reqDic successBlock:^(id responseObject) {
         NSDictionary *jsonStr = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"%@",jsonStr);
-        if([jsonStr[@"error"] length] == 0){
+        if([jsonStr[@"errno"] integerValue] == 0){
             [self.view makeToast:@"修改成功"];
             [self addignoreMobile:self.mobileLabel.text];
+            self.imageView11.image = [UIImage imageNamed:@"right"];
+        }else{
+            [self.view makeToast:jsonStr[@"error"]];
+            self.imageView11.image = [UIImage imageNamed:@"wrong"];
         }
         
     } failureBlock:^(id error) {
         [self.view makeToast:@"修改密码失败"];
+        self.imageView11.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
@@ -283,9 +340,17 @@
     [AFCustomManager post:@"https://app.api.ke.com/user/account/loginByPasswordV2" reqDic:reqDic successBlock:^(id responseObject) {
         NSDictionary *jsonStr = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         NSLog(@"%@",jsonStr);
+        if([jsonStr[@"errno"] integerValue] == 0){
+            [self.view makeToast:@"登录成功"];
+            self.imageView12.image = [UIImage imageNamed:@"right"];
+        }else{
+            [self.view makeToast:@"账号密码登录失败"];
+            self.imageView12.image = [UIImage imageNamed:@"wrong"];
+        }
         
     } failureBlock:^(id error) {
         [self.view makeToast:@"账号密码登录失败"];
+        self.imageView12.image = [UIImage imageNamed:@"wrong"];
     }];
 }
 
