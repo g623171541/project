@@ -12,6 +12,7 @@
 #import "Header.h"
 
 #define Invite_Code @"92870373"
+//#define Invite_Code @"24870814"
 #define PASSWORD @"abc123456"
 
 @interface ViewController : UIViewController

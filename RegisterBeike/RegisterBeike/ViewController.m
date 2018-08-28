@@ -387,4 +387,9 @@
     }];
 }
 
+#pragma mark - 点击其他位置收回键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 @end
