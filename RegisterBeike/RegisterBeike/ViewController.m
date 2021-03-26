@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <ZLPhotoBrowser/ZLPhotoBrowser.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
@@ -329,7 +330,16 @@
 
 // 账号密码登录
 - (IBAction)loginWithPwd:(UIButton *)sender {
+//    ZLPhotoActionSheet *ac = [[ZLPhotoActionSheet alloc] init];
+//    // 调用相册
+//    [ac showPreviewAnimated:YES];
     
+    [ZLPhotoManager getCameraRollAlbumList:NO allowSelectImage:NO complete:^(ZLAlbumListModel * _Nonnull album) {
+        NSLog(@"%@",album.models);
+    }];
+    
+    
+    return;
     NSLog(@"账号密码登录");
     if(self.mobileLabel.text.length != 11){
         [self.view makeToast:@"请获取手机号码"];

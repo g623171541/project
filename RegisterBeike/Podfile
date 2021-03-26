@@ -9,5 +9,6 @@ target 'RegisterBeike' do
 
   pod 'AFNetworking'
   pod 'Toast'
+  pod 'ZLPhotoBrowser'
 
 end

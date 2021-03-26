@@ -113,6 +113,7 @@
 				0A1CAA0B21301427007722BE /* Sources */,
 				0A1CAA0C21301427007722BE /* Frameworks */,
 				0A1CAA0D21301427007722BE /* Resources */,
+				34A72F48F0E80C3B31A526D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,6 +170,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		34A72F48F0E80C3B31A526D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RegisterBeike/Pods-RegisterBeike-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E57066EB9B78E8560AFEE64E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

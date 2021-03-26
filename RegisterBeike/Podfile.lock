@@ -14,21 +14,32 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - Toast (4.0.0)
+  - ZLPhotoBrowser (3.2.0):
+    - SDWebImage
 
 DEPENDENCIES:
   - AFNetworking
   - Toast
+  - ZLPhotoBrowser
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Toast
+  trunk:
+    - SDWebImage
+    - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  ZLPhotoBrowser: 3748fdbeb2b28961c2495d15131dbf413082e1b9
 
-PODFILE CHECKSUM: 02374027bb9e71319346a87a0b8cdaaac20d52ef
+PODFILE CHECKSUM: a1d7927fa7c3c511c98f3c419a001c195f2af1e5
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3
